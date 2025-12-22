@@ -1,0 +1,32 @@
+/* layout/header.css */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #fff;
+  padding: 16px 70px;
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+}
+
+.gnb {
+  display: flex;
+  gap: 48px;
+}
+
+.gnb a {
+  text-decoration: none;
+  color: var(--gray-700);
+  font-weight: 700;
+  font-size: var(--font-lg);
+}
+
+.gnb a:hover {
+  color: var(--primary-hover);
+}

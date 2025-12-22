@@ -1,0 +1,19 @@
+:root {
+  --gray-900: #1b1b1b;
+  --gray-700: #737373;
+  --gray-500: #cbcbcd;
+  --gray-300: #edeff3;
+  --gray-100: #f6f7f9;
+  --primary: #e60012;
+  --primary-hover: #ff3848;
+
+  --font-base: "Pretendard", sans-serif;
+
+  /* font size scale */
+  --font-xs: 0.75rem; /* 12px */
+  --font-sm: 0.875rem; /* 14px */
+  --font-md: 1rem; /* 16px */
+  --font-lg: 1.125rem; /* 18px */
+  --font-xl: 1.25rem; /* 20px */
+  --font-2xl: 1.5rem; /* 24px */
+}
