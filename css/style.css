@@ -6,6 +6,8 @@
 @import "./layout/footer.css";
 
 @import "./components/banner.css";
+@import "./components/section-title.css";
+@import "./components/company-section.css";
 @import "./components/card.css";
 @import "./components/item-list.css";
 @import "./components/pagination.css";

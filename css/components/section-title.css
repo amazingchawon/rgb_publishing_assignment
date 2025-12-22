@@ -1,0 +1,16 @@
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.section-title__icon {
+  width: 32px;
+  height: auto;
+}
+
+.section-title__text {
+  font-size: var(--font-lg);
+  color: var(--primary);
+  font-weight: 700;
+}
