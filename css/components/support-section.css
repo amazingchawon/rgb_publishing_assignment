@@ -22,6 +22,14 @@
   flex: 1;
 }
 
+.support__headline {
+  font-size: clamp(24px, 3.5vw, 36px);
+  font-weight: 800;
+  margin: 20px 0 40px;
+  word-break: keep-all;
+  line-height: 1.4;
+}
+
 /* 뉴스 카드 그리드 */
 .news-grid {
   display: grid;
