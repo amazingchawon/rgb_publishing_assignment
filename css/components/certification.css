@@ -1,0 +1,116 @@
+.certification {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+/* 상단 타이틀 및 이미지 */
+.certification__header {
+  margin-bottom: 100px;
+}
+
+.title-area {
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+.sub-title {
+  font-size: 40px;
+  font-weight: 800;
+  position: relative;
+  padding-left: 40px;
+}
+
+.sub-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 30px;
+  height: 2px;
+  background: var(--primary);
+}
+
+.sub-desc {
+  font-size: var(--font-md);
+  color: var(--gray-700);
+  line-height: 1.6;
+}
+
+.main-visual {
+  position: relative;
+  width: 100%;
+}
+
+.main-visual > img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.visual-box {
+  position: absolute;
+  left: 50px;
+  bottom: -40px;
+  background: var(--primary);
+  padding: 40px;
+  color: #fff;
+  width: 220px;
+  z-index: 10;
+}
+
+.visual-box p {
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 30px;
+}
+
+.visual-box img {
+  width: 100px;
+}
+
+/* 인증서 그리드 */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: 150px;
+}
+
+.cert-item {
+  text-align: center;
+}
+
+.cert-item__img {
+  background: var(--gray-100);
+  padding: 30px;
+  margin-bottom: 20px;
+  position: relative;
+  border: 1px solid var(--gray-300);
+  cursor: pointer;
+}
+
+.cert-item__img img {
+  width: 100%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cert-item__title {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  word-break: keep-all;
+}
+
+.cert-item__code {
+  font-size: 13px;
+  color: var(--gray-700);
+}
+
+/* 호버 효과 */
+.cert-item__img:hover {
+  border-color: var(--primary);
+}

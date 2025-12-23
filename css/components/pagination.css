@@ -1,0 +1,31 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 60px 0 100px;
+}
+
+.page-num,
+.page-arrow {
+  text-decoration: none;
+  color: #bbb;
+  font-size: 16px;
+  padding: 5px 10px;
+  transition: 0.3s;
+}
+
+.page-num.is-active {
+  color: var(--primary);
+  font-weight: 800;
+  border-bottom: 2px solid var(--primary);
+}
+
+.page-num:hover,
+.page-arrow:hover {
+  color: var(--primary);
+}
+
+.page-arrow {
+  font-size: 14px;
+}

@@ -1,7 +1,4 @@
 // 공통
-import "./components/banner.js";
-import "./components/business-section.js";
-import "./components/product-section.js";
 import "./common/scroll-top.js";
 
 // 페이지별

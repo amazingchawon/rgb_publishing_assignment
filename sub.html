@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>서브 페이지</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/pretendard@latest/dist/web/static/pretendard.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/main.js" type="module" defer></script>
+  </head>
+  <body>
+    <!-- header -->
+    <div id="header"></div>
+
+    <!-- banner -->
+    <img class="banner" src="assets/images/subbanner.png" alt="배너 이미지" />
+
+    <!-- menu -->
+    <nav class="sub-menu">
+      <div class="sub-menu__inner">
+        <ul>
+          <li><a href="#">공지사항</a></li>
+          <li class="is-active"><a href="#">인증</a></li>
+          <li><a href="#">동영상</a></li>
+          <li><a href="#">온라인 문의</a></li>
+          <li><a href="#">자주하는 질문</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- certification -->
+    <section class="certification">
+      <div class="certification__header">
+        <div class="title-area">
+          <h2 class="sub-title">인증</h2>
+          <p class="sub-desc">
+            덱스코윈은 진화하는 시장의 요구를 충족시키는 것을 목표로<br />지속적으로
+            발전하기 위해 노력하고 있습니다.
+          </p>
+        </div>
+
+        <div class="main-visual">
+          <img src="assets/images/certification.png" alt="인증 메인 비주얼" />
+          <div class="visual-box">
+            <p>INNOVATING<br />THE CONCEPT<br />OF PORTABLE<br />X-RAYS</p>
+            <img src="assets/images/Dexcowin_Logo(white).png" alt="덱스코윈" />
+          </div>
+        </div>
+      </div>
+
+      <!-- certification awards -->
+      <div class="cert-grid">
+        <article class="cert-item">
+          <div class="cert-item__img">
+            <img src="assets/images/certification_1.png" alt="인증서" />
+          </div>
+          <h3 class="cert-item__title">
+            의료기기 제조 및 품질관리 기준 적합인정서(GMP)
+          </h3>
+          <p class="cert-item__code">KTL-ADBA-13746</p>
+        </article>
+        <article class="cert-item">
+          <div class="cert-item__img">
+            <img src="assets/images/certification_2.png" alt="인증서" />
+          </div>
+          <h3 class="cert-item__title">
+            포터블텐탈엑스선 촬영장치 및 디지털 방사선 촬영 시스템의 설계 및
+            제조
+          </h3>
+          <p class="cert-item__code">ISO 13485</p>
+        </article>
+        <article class="cert-item">
+          <div class="cert-item__img">
+            <img src="assets/images/certification_3.png" alt="인증서" />
+          </div>
+          <h3 class="cert-item__title">이온화 방사선을 이용하는 영상 장치</h3>
+          <p class="cert-item__code">ISO 13485</p>
+        </article>
+        <article class="cert-item">
+          <div class="cert-item__img">
+            <img src="assets/images/certification_4.png" alt="인증서" />
+          </div>
+          <h3 class="cert-item__title">FDA 메디컬 디바이스</h3>
+          <p class="cert-item__code">-</p>
+        </article>
+      </div>
+
+      <!-- pagination -->
+      <div class="pagination">
+        <a href="#" class="page-arrow prev-double">&lt;&lt;</a>
+        <a href="#" class="page-arrow prev">&lt;</a>
+        <a href="#" class="page-num is-active">1</a>
+        <a href="#" class="page-num">2</a>
+        <a href="#" class="page-num">8</a>
+        <a href="#" class="page-arrow next">&gt;</a>
+        <a href="#" class="page-arrow next-double">&gt;&gt;</a>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <div id="footer"></div>
+    <button id="backToTop" class="btn-top">
+      <span>TOP</span>
+    </button>
+  </body>
+</html>
