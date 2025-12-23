@@ -9,11 +9,6 @@
   align-items: center;
 }
 
-.business__headline {
-  font-size: 32px;
-  margin-bottom: 24px;
-}
-
 .business__images {
   position: relative;
   width: 520px;

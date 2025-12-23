@@ -6,3 +6,17 @@ html {
 body {
   font-family: var(--font-base);
 }
+
+.headline {
+  font-size: 32px;
+  margin-bottom: 24px;
+}
+
+.badge {
+  background-color: var(--primary);
+  color: white;
+  padding: 8px 24px;
+  border-radius: 20px;
+  width: fit-content;
+  font-size: var(--font-sm);
+}

@@ -78,16 +78,6 @@
   transform: scale(1);
 }
 
-/* 뱃지 */
-.product-badge {
-  background-color: var(--primary);
-  color: white;
-  padding: 4px 16px;
-  border-radius: 20px;
-  width: fit-content;
-  font-size: 14px;
-}
-
 /* 하단 썸네일 */
 .product-thumbnails {
   display: flex;
