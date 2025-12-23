@@ -20,3 +20,13 @@ body {
   width: fit-content;
   font-size: var(--font-sm);
 }
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  color: var(--gray-700);
+  font-weight: 600;
+  border-bottom: 2px solid var(--gray-500);
+  padding-bottom: 4px;
+}

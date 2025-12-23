@@ -1,0 +1,136 @@
+.support {
+  padding: 120px 0;
+  background-color: #fff;
+}
+
+.support-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* 헤더 영역 */
+.support-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 60px;
+}
+
+.support-header .section-title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* 뉴스 카드 그리드 */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 80px;
+}
+
+.news-card {
+  border: 1px solid #eee;
+  padding: 40px 30px;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.news-card:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border-color: transparent;
+}
+
+.news-label {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.news-title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 20px;
+  word-break: keep-all;
+}
+
+.news-desc {
+  color: #777;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: auto; /* 날짜를 아래로 밀기 위해 */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.news-date {
+  color: #999;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.news-date::before {
+  content: "🕒";
+  font-size: 12px;
+  margin-right: 6px;
+}
+
+/* 하단 배너 */
+.banner-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.banner-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 50px;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.banner-item:hover {
+  opacity: 0.9;
+}
+
+.banner-item.recruit {
+  background-color: var(--primary);
+}
+
+.banner-item.inquiry {
+  background-color: #2e3192;
+}
+
+.banner-text h3 {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.banner-text p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+}
+
+.banner-arrow {
+  color: #fff;
+  font-size: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
