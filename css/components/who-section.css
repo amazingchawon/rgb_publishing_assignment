@@ -1,0 +1,45 @@
+.who {
+  padding: 100px 180px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 가로 가운데 */
+  text-align: center; /* 텍스트 가운데 */
+  gap: 20px;
+  background: var(--gray-100);
+}
+
+.who-bg {
+  width: 100%;
+  min-height: 500px;
+
+  background-image: url("../../assets/images/who.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain; /* 이미지 전체 보이게 */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.who-bg__content {
+  max-width: 800px;
+  text-align: center;
+  padding-top: 200px;
+}
+
+.who-content__title {
+  font-size: 62px;
+}
+
+.who-content__subtitle {
+  font-size: var(--font-2xl);
+  margin-bottom: 24px;
+}
+
+.who-content__text {
+  font-size: var(--font-xl);
+  margin-bottom: 24px;
+  color: var(--gray-700);
+}
