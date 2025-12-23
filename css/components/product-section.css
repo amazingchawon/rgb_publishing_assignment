@@ -1,0 +1,176 @@
+.product {
+  display: flex;
+  padding: 100px 180px;
+  gap: 40px;
+}
+
+.product__side {
+  display: flex;
+  flex-direction: row; /* 로고/PRODUCT 묶음과 DEXCOWIN을 가로로 배치 */
+  align-items: flex-start; /* 상단 기준 정렬 */
+  gap: 40px; /* 로고 묶음과 DEXCOWIN 사이 간격 */
+}
+
+/* 로고 90도 회전 */
+.vertical-logo {
+  transform: rotate(90deg);
+  width: 24px;
+  height: auto;
+  display: block;
+}
+
+.vertical-text {
+  /* 세로 쓰기 모드 적용 (글자가 세로로 배치됨) */
+  writing-mode: vertical-rl;
+  /* 글자 방향을 아래에서 위로 읽도록 180도 회전 */
+  transform: rotate(180deg);
+
+  font-size: var(--font-lg);
+  color: var(--primary);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.text-deco {
+  font-size: 100px;
+  font-weight: 700;
+  color: var(--gray-500);
+  line-height: 1;
+}
+
+.product-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  position: relative;
+}
+
+.product-display {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.product-image-container {
+  position: relative;
+  width: 520px;
+  height: 360px;
+  flex-shrink: 0;
+
+  margin-right: -160px; /* 오른쪽 마진을 음수로 주어 정보창과 겹치게 합니다. 값 조절 가능 */
+  z-index: 10; /* 정보창(z-index: 1 예정)보다 높은 값을 주어 위로 올립니다. */
+}
+
+.product-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* 이미지 비율 유지 */
+
+  opacity: 0;
+  transform: scale(0.9) translateX(20px);
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.product-image.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* 뱃지 */
+.product-badge {
+  background-color: var(--primary);
+  color: white;
+  padding: 4px 16px;
+  border-radius: 20px;
+  width: fit-content;
+  font-size: 14px;
+}
+
+/* 하단 썸네일 */
+.product-thumbnails {
+  display: flex;
+  background-color: #fff;
+  gap: 15px;
+
+  position: absolute;
+  padding: 10px 10px 0px 0px;
+  bottom: 18px;
+  left: 360px;
+  z-index: 20;
+}
+
+.thumb-item {
+  width: 60px;
+  height: 60px;
+  background-color: var(--gray-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.thumb-item img {
+  width: 80%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* 현재 선택된 썸네일 배경 빨간색 */
+.thumb-item.is-active {
+  background-color: var(--primary);
+}
+
+.product-info {
+  flex: 0.8;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  justify-content: flex-start; /* 콘텐츠를 위쪽부터 정렬 */
+  background-color: var(--gray-100);
+  padding: 60px 120px; /* 아래쪽에 썸네일이 들어갈 공간 확보 */
+
+  height: 520px;
+  position: relative;
+  z-index: 1;
+}
+
+/* 상품 설명 */
+.product-info-item {
+  display: none;
+}
+
+.product-info-item.is-active {
+  display: block;
+}
+
+.product-title {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.product-subtitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.product-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--gray-700);
+  word-break: keep-all; /* 한글 줄바꿈 예쁘게 */
+}
+
+/* 화살표 버튼 */
+.control-btn {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--gray-500);
+  border-radius: 50%;
+  cursor: pointer;
+}
