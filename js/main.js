@@ -12,3 +12,14 @@ if (document.body.classList.contains("page-main")) {
 if (document.body.classList.contains("page-sub")) {
   import("./pages/sub.js");
 }
+
+function loadComponent(id, path) {
+  fetch(path)
+    .then((res) => res.text())
+    .then((html) => {
+      document.getElementById(id).innerHTML = html;
+    });
+}
+
+loadComponent("header", "components/header.html");
+loadComponent("footer", "components/footer.html");
