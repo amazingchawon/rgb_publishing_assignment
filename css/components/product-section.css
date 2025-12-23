@@ -1,133 +1,98 @@
 .product {
   display: flex;
-  padding: 100px 180px;
-  gap: 40px;
+  padding: 120px 8%;
+  gap: 60px;
+  max-width: 1800px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
+/* 1. 사이드 세로 텍스트 */
 .product__side {
   display: flex;
-  flex-direction: row; /* 로고/PRODUCT 묶음과 DEXCOWIN을 가로로 배치 */
-  align-items: flex-start; /* 상단 기준 정렬 */
-  gap: 40px; /* 로고 묶음과 DEXCOWIN 사이 간격 */
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 30px;
+  flex-shrink: 0;
 }
 
-/* 로고 90도 회전 */
 .vertical-logo {
   transform: rotate(90deg);
   width: 24px;
   height: auto;
-  display: block;
+  margin-top: 10px;
 }
 
 .vertical-text {
-  /* 세로 쓰기 모드 적용 (글자가 세로로 배치됨) */
   writing-mode: vertical-rl;
-  /* 글자 방향을 아래에서 위로 읽도록 180도 회전 */
   transform: rotate(180deg);
-
-  font-size: var(--font-lg);
+  font-size: 18px;
   color: var(--primary);
   font-weight: 700;
   white-space: nowrap;
 }
 
 .text-deco {
-  font-size: 100px;
-  font-weight: 700;
+  font-size: clamp(60px, 8vw, 100px);
   color: var(--gray-500);
-  line-height: 1;
+  opacity: 0.5;
 }
 
+/* 2. 메인 콘텐츠 컨테이너 */
 .product-content {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 60px;
   position: relative;
+  min-width: 0; /* flex 자식의 최소너비 이슈 방지 */
 }
 
+/* 3. 이미지와 정보가 담긴 영역 */
 .product-display {
   display: flex;
   align-items: center;
   position: relative;
+  width: 100%;
 }
 
+/* 상품 이미지 - 정보창 위로 겹침 */
 .product-image-container {
   position: relative;
-  width: 520px;
-  height: 360px;
+  width: 50%;
+  height: 400px;
   flex-shrink: 0;
-
-  margin-right: -160px; /* 오른쪽 마진을 음수로 주어 정보창과 겹치게 합니다. 값 조절 가능 */
-  z-index: 10; /* 정보창(z-index: 1 예정)보다 높은 값을 주어 위로 올립니다. */
+  z-index: 10;
+  margin-right: -10%; /* 상대 수치로 겹침 폭 조절 */
 }
 
 .product-image {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain; /* 이미지 비율 유지 */
-
+  object-fit: contain;
   opacity: 0;
-  transform: scale(0.9) translateX(20px);
-  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateX(20px);
+  transition: all 0.5s ease;
 }
 
 .product-image.is-active {
   opacity: 1;
-  transform: scale(1);
+  transform: translateX(0);
 }
 
-/* 하단 썸네일 */
-.product-thumbnails {
-  display: flex;
-  background-color: #fff;
-  gap: 15px;
-
-  position: absolute;
-  padding: 10px 10px 0px 0px;
-  bottom: 18px;
-  left: 360px;
-  z-index: 20;
-}
-
-.thumb-item {
-  width: 60px;
-  height: 60px;
-  background-color: var(--gray-100);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.thumb-item img {
-  width: 80%;
-  height: auto;
-  object-fit: contain;
-}
-
-/* 현재 선택된 썸네일 배경 빨간색 */
-.thumb-item.is-active {
-  background-color: var(--primary);
-}
-
+/* 4. 정보창 (회색 박스) */
 .product-info {
-  flex: 0.8;
-  display: flex;
-  gap: 20px;
-  flex-direction: column;
-  justify-content: flex-start; /* 콘텐츠를 위쪽부터 정렬 */
+  flex: 1;
   background-color: var(--gray-100);
-  padding: 60px 120px; /* 아래쪽에 썸네일이 들어갈 공간 확보 */
-
-  height: 520px;
+  padding: 60px 60px 140px 15%; /* 왼쪽 패딩을 %로 주어 이미지와 겹치는 공간 확보 */
+  min-height: 500px;
+  border-radius: 20px;
   position: relative;
-  z-index: 1;
+  z-index: 1; /* 이미지(10)보다 아래 */
 }
 
-/* 상품 설명 */
 .product-info-item {
   display: none;
 }
@@ -135,16 +100,15 @@
 .product-info-item.is-active {
   display: block;
 }
-
 .product-title {
-  font-size: 48px;
+  font-size: clamp(32px, 4vw, 48px);
   font-weight: 800;
-  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .product-subtitle {
   font-size: 20px;
-  font-weight: 600;
   color: var(--primary);
   margin-bottom: 20px;
 }
@@ -153,14 +117,130 @@
   font-size: 16px;
   line-height: 1.6;
   color: var(--gray-700);
-  word-break: keep-all; /* 한글 줄바꿈 예쁘게 */
+  word-break: keep-all;
 }
 
-/* 화살표 버튼 */
+/* 5. 버튼 컨트롤 - 정보창 하단 우측 고정 */
+.product-controls {
+  position: absolute;
+  bottom: 40px;
+  right: 60px;
+  display: flex;
+  gap: 15px;
+  z-index: 20;
+}
+
 .control-btn {
-  width: 40px;
-  height: 40px;
-  border: 2px solid var(--gray-500);
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--gray-400);
+  background: #fff;
   border-radius: 50%;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.control-btn:hover {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+/* 6. 하단 썸네일 - 정보창 하단 내부 위치 */
+.product-thumbnails {
+  display: flex;
+  gap: 12px;
+  position: absolute;
+  bottom: 40px;
+  left: 15%; /* 정보창 텍스트 라인과 일치 */
+  z-index: 20;
+}
+
+.thumb-item {
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  border: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.thumb-item img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+
+.thumb-item.is-active {
+  background: var(--primary);
+}
+
+/* --- 반응형 미디어 쿼리 --- */
+
+/* 태블릿 (1024px 이하) */
+@media (max-width: 1024px) {
+  .product {
+    padding: 80px 5%;
+    gap: 30px;
+  }
+  .product-image-container {
+    width: 45%;
+    height: 300px;
+  }
+  .product-info {
+    padding-left: 10%;
+  }
+}
+
+/* 모바일 (768px 이하) - 레이아웃 재배치 */
+@media (max-width: 768px) {
+  .product {
+    flex-direction: column;
+    padding: 60px 20px;
+  }
+
+  /* 사이드 텍스트 회전 해제 */
+  .product__side {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .vertical-logo,
+  .vertical-text {
+    writing-mode: horizontal-tb;
+    transform: none;
+  }
+  .text-deco {
+    display: none;
+  }
+
+  /* 이미지와 정보창 상하 배치 */
+  .product-display {
+    flex-direction: column;
+  }
+  .product-image-container {
+    width: 100%;
+    height: 250px;
+    margin-right: 0;
+    margin-bottom: -30px; /* 위아래로 살짝 겹치게 */
+  }
+
+  .product-info {
+    width: 100%;
+    padding: 60px 20px 140px;
+    text-align: center;
+  }
+
+  .product-thumbnails {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 80px;
+  }
+
+  .product-controls {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 25px;
+  }
 }
