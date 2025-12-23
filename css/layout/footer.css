@@ -1,0 +1,179 @@
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 80px 0 50px;
+}
+
+.footer__inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 5%;
+  display: flex;
+  align-items: flex-start;
+  gap: 100px; /* 로고와 콘텐츠 사이 간격 */
+}
+
+/* 덱스코윈 로고 이미지 */
+.footer__inner > img {
+  width: 180px;
+  height: auto;
+}
+
+/* 오른쪽 전체 콘텐츠 영역 */
+.footer-content {
+  flex: 1;
+}
+
+/* 상단 메뉴 리스트 */
+.footer-menu {
+  display: flex;
+  align-items: center; /* 세로 중앙 정렬 */
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+}
+
+.footer-menu li {
+  font-size: var(--font-md);
+  font-weight: 500;
+  color: var(--gray-500);
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  position: relative; /* 선 위치의 기준점 */
+}
+
+/* 메뉴 사이의 세로선 만들기 */
+.footer-menu li:not(:last-child)::after {
+  content: ""; /* 빈 컨텐츠 생성 */
+  display: inline-block;
+  width: 1px; /* 선 두께 */
+  height: 12px; /* 선 높이 */
+  background-color: rgba(255, 255, 255, 0.3); /* 선 색상 (살짝 투명하게) */
+  margin: 0 15px;
+}
+
+.footer-menu li:hover {
+  opacity: 1;
+}
+
+/* 주소 및 연락처 정보 영역 */
+.footer-info-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 40px;
+  margin-bottom: 30px;
+}
+
+.info-details {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.info-row {
+  display: flex;
+  gap: 15px;
+  font-size: var(--font-sm);
+  line-height: 1.5;
+  color: #bbb;
+}
+
+.info-row strong {
+  color: #fff;
+  margin-right: 5px;
+}
+
+/* SNS 아이콘 컨테이너 */
+.icon-container {
+  display: flex;
+  gap: 15px;
+}
+
+.icon-container img {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+
+.icon-container img:hover {
+  opacity: 1;
+}
+
+/* 하단 카피라이트 */
+.footer__copy {
+  font-size: 13px;
+  color: #666;
+  margin-top: 10px;
+}
+
+/* TOP 버튼 스타일 */
+.btn-top {
+  position: fixed;
+  bottom: 80px; /* 푸터 높이에 맞춰 적절히 조절 */
+  right: 5%;
+  width: 60px;
+  height: 60px;
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  transition: all 0.3s ease;
+
+  /* 초기에는 숨김 처리 (스크롤 시 나타나게 할 경우) */
+  opacity: 0;
+  visibility: hidden;
+}
+
+.btn-top:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-5px);
+}
+
+/* 스크롤 시 버튼 활성화 클래스 */
+.btn-top.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* --- 반응형 (Responsive) --- */
+
+@media (max-width: 1024px) {
+  .footer__inner {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .footer-info-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 60px 0 40px;
+  }
+
+  .footer-menu {
+    flex-wrap: wrap;
+    gap: 15px 25px;
+  }
+
+  .info-row {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
